@@ -94,4 +94,45 @@ public class CalculadoraTest {
 				() -> calc.divisao(8, 0));
 	}
 
+	@Test
+public void testSomaComZero() {
+    assertEquals(5, calc.soma(5, 0));
+}
+
+@Test
+public void testSubtracaoComNumeroNegativo() {
+    assertEquals(10, calc.subtracao(5, -5));
+}
+
+@Test
+public void testMultiplicacaoComZero() {
+    assertEquals(0, calc.multiplicacao(7, 0));
+}
+
+@Test
+public void testDivisaoNumeroNegativo() {
+    assertEquals(-2, calc.divisao(-8, 4));
+}
+
+@Test
+public void testSomatoriaZero() {
+    assertEquals(0, calc.somatoria(0));
+}
+
+@Test
+public void testSomatoriaGrande() {
+    assertEquals(55, calc.somatoria(10));
+}
+
+@Test
+public void testEhPositivoComZero() {
+    assertTrue(calc.ehPositivo(0));
+}
+
+@Test
+public void testSomaComOverflow() {
+    int resultado = calc.soma(Integer.MAX_VALUE, 1);
+    assertEquals(Integer.MIN_VALUE, resultado); // overflow esperado
+}
+
 }
